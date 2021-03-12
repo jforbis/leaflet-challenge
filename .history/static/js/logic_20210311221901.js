@@ -41,7 +41,7 @@ d3.json(url, d => {
     }
 
     function chooseSize(mag) {
-        return mag * 3;
+        return mag * 4;
     };
 
     function chooseColor(mag) {

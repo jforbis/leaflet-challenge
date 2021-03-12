@@ -41,23 +41,23 @@ d3.json(url, d => {
     }
 
     function chooseSize(mag) {
-        return mag * 3;
+        return mag * 4;
     };
 
     function chooseColor(mag) {
         switch(true) {
             case mag > 5:
-                return "#964B00";
+                return "4A013A";
             case mag > 4:
-                return "#B500FF";
+                return "900C3F";
             case mag > 3:
-                return "#FF0B00";
+                return "FF3C33";
             case mag > 2:
-                return "#FF7F00";
+                return "FFC033";
             case mag >1:
-                return "#FFFB00";
+                return "D9FF33";
             default:
-                return "#00FF2F";
+                return "#33FF6B";
             }
     }
 

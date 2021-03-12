@@ -60,15 +60,4 @@ d3.json(url, d => {
                 return "red";
             }
     }
-
-    let legend = L.control({
-        position: "bottomright"
-    });
-
-    legend.onAdd = function() {
-        let div = L.DomUtil.create("div", "legend");
-        return div;
-    };
-
-    legend.addTo(myMap);
 });

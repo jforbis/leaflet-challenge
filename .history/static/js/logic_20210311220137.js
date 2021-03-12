@@ -65,10 +65,10 @@ d3.json(url, d => {
         position: "bottomright"
     });
 
-    legend.onAdd = function() {
-        let div = L.DomUtil.create("div", "legend");
+    info.onAdd = function() {
+        var div = L.DomUtil.create("div", "legend");
         return div;
     };
-
-    legend.addTo(myMap);
+      // Add the info legend to the map
+    info.addTo(map);
 });

@@ -62,13 +62,11 @@ d3.json(url, d => {
     }
 
     let legend = L.control({
-        position: "bottomright"
+        position: "bottomleft"
     });
 
-    legend.onAdd = function() {
-        let div = L.DomUtil.create("div", "legend");
-        return div;
-    };
+    legen.onAdd = function() {
+        let div = L.DomUtil.create("div", "Legend:");
+    }
 
-    legend.addTo(myMap);
 });

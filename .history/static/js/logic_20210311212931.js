@@ -17,58 +17,35 @@ let myMap = L.map("map", {
 map.addTo(myMap);
 
 d3.json(url, d => {
-    L.geoJson(d, {
-        pointToLayer: function(feature, latlng) {
-            return L.circleMarker(latlng);
-        },
-        style: chooseStyle,
-
-        onEachFeature: function(feature, layer) {
-            layer.bindPopup("Magnitude: " + feature.properties.mag + "<br> Location: " + feature.properties.place);
-        }
-    }).addTo(myMap);
+    L.geoJson(d).addTo(myMap);
 
     function chooseStyle(feature) {
         return {
             opacity: 2,
             fillOpacity: 2,
             fillColor: chooseColor(feature.properties.mag),
-            color: chooseColor(feature.geometry.coordinates[2]),
-            radius: chooseSize(feature.properties.mag),
+            color: "#000000",
+            radius: ,
             stroke: true,
             weight: .5
         };
     }
 
-    function chooseSize(mag) {
-        return mag * 4;
-    };
-
     function chooseColor(mag) {
-        switch(true) {
-            case mag > 5:
+        switch(mag) {
+            case mag < 10:
                 return "green";
-            case mag > 4:
+            case mag >=10 && mag < 30:
                 return "lightgreen";
-            case mag > 3:
+            case mag >= 30 && mag <50:
                 return "yelloworange";
-            case mag > 2:
+            case mag >= 50 && mag < 70:
                 return "lightorange";
-            case mag >1:
+            case mag >= 70 && mag < 90:
                 return "orange";
             default:
                 return "red";
             }
     }
 
-    let legend = L.control({
-        position: "bottomright"
-    });
-
-    legend.onAdd = function() {
-        let div = L.DomUtil.create("div", "legend");
-        return div;
-    };
-
-    legend.addTo(myMap);
 });

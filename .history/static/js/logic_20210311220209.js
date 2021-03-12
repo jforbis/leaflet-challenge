@@ -66,9 +66,9 @@ d3.json(url, d => {
     });
 
     legend.onAdd = function() {
-        let div = L.DomUtil.create("div", "legend");
+        var div = L.DomUtil.create("div", "legend");
         return div;
     };
-
+      // Add the info legend to the map
     legend.addTo(myMap);
 });

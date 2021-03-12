@@ -33,8 +33,8 @@ d3.json(url, d => {
             opacity: 2,
             fillOpacity: 2,
             fillColor: chooseColor(feature.properties.mag),
-            color: chooseColor(feature.geometry.coordinates[2]),
-            radius: chooseSize(feature.properties.mag),
+            color: "#000000",
+            radiucs: ,
             stroke: true,
             weight: .5
         };
@@ -43,7 +43,7 @@ d3.json(url, d => {
     function chooseSize(mag) {
         return mag * 4;
     };
-
+    
     function chooseColor(mag) {
         switch(true) {
             case mag > 5:
@@ -60,15 +60,4 @@ d3.json(url, d => {
                 return "red";
             }
     }
-
-    let legend = L.control({
-        position: "bottomright"
-    });
-
-    legend.onAdd = function() {
-        let div = L.DomUtil.create("div", "legend");
-        return div;
-    };
-
-    legend.addTo(myMap);
 });

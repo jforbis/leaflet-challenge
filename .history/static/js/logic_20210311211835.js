@@ -22,7 +22,7 @@ d3.json(url, d => {
 
 function chooseColor(mag) {
     switch(mag) {
-        case mag < 10:
+        case mag<10:
             return "green";
         case mag >=10 && mag < 30:
             return "lightgreen";
@@ -36,5 +36,3 @@ function chooseColor(mag) {
             return "red";
         }
 }
-
-chooseColor();

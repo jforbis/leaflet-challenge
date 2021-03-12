@@ -36,5 +36,3 @@ function chooseColor(mag) {
             return "red";
         }
 }
-
-chooseColor();

@@ -19,22 +19,3 @@ map.addTo(myMap);
 d3.json(url, d => {
     L.geoJson(d).addTo(myMap);
 });
-
-function chooseColor(mag) {
-    switch(mag) {
-        case mag < 10:
-            return "green";
-        case mag >=10 && mag < 30:
-            return "lightgreen";
-        case mag >= 30 && mag <50:
-            return "yelloworange";
-        case mag >= 50 && mag < 70:
-            return "lightorange";
-        case mag >= 70 && mag < 90:
-            return "orange";
-        default:
-            return "red";
-        }
-}
-
-chooseColor();

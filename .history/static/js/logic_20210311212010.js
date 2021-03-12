@@ -37,4 +37,4 @@ function chooseColor(mag) {
         }
 }
 
-chooseColor();
+chooseColor(mag);

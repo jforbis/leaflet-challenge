@@ -54,7 +54,7 @@ d3.json(url, d => {
                 return "#FF0B00";
             case mag > 2:
                 return "#FF7F00";
-            case mag > 1:
+            case mag >1:
                 return "#FFFB00";
             default:
                 return "#00FF2F";
@@ -62,24 +62,21 @@ d3.json(url, d => {
     }
 
     let legend = L.control({
-        position: "bottomleft"
+        position: "bottomright"
     });
 
     legend.onAdd = function() {
-        let div = L.DomUtil.create("div", "legend");
+        let div = L.DomUtil.create("div", "info legend");
 
-        let intensity = [0,1,2,3,4,5];
-        let colors = ["#00FF2F", "#FFFB00", "#FF7F00", "#FF0B00", "#B500FF", "#964B00"];
+        let magLevels = [0,1,2,3,4,5];
+        let colors = ["#00FF2F", "FFFB00", "FF7F00", "FF0B00", "B500FF", "964B00"];
 
-        let legendInfo = "<h4>LEGEND: </h4>"
-        div.innerHTML = legendInfo 
-        for (let i = 0; i < colors.length; i++) {
+        for (var i = 0; i < magLevels.length; i++) {
             div.innerHTML +=
             "<i style='background: " + colors[i] + "'></i> " +
-            intensity[i] + (intensity[i + 1] ? "&ndash;" + intensity[i + 1] + " Magnitude <br>" : "+ Magnitude");
+            magLevels[i] + (magLevels[i + 1] ? "&ndash;" + magLevels[i + 1] + "<br>" : "+");
         }
         return div;
-
     };
     legend.addTo(myMap);
 });

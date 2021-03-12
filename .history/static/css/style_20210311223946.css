@@ -16,14 +16,3 @@ html {
   background-color: white;
   border-radius: 5px;
 }
-
-.legend i {
-  float: left;
-  width: 18px;
-  height: 18px;
-  margin-right: 8px;
-}
-
-h4 {
-  margin: 5px;
-}

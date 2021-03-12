@@ -71,15 +71,13 @@ d3.json(url, d => {
         let intensity = [0,1,2,3,4,5];
         let colors = ["#00FF2F", "#FFFB00", "#FF7F00", "#FF0B00", "#B500FF", "#964B00"];
 
-        let legendInfo = "<h4>LEGEND: </h4>"
-        div.innerHTML = legendInfo 
+        let legendInfo = "<h1>LEGEND: </h1>" +
         for (let i = 0; i < colors.length; i++) {
             div.innerHTML +=
             "<i style='background: " + colors[i] + "'></i> " +
             intensity[i] + (intensity[i + 1] ? "&ndash;" + intensity[i + 1] + " Magnitude <br>" : "+ Magnitude");
         }
         return div;
-
     };
     legend.addTo(myMap);
 });

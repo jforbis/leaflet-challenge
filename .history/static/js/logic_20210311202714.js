@@ -11,7 +11,7 @@ let map = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?a
 
 let myMap = L.map("map", {
     center: [0,0], 
-    zoom: 2,
+    zoom: 5,
 });
 
 map.addTo(myMap);

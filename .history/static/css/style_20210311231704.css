@@ -25,10 +25,6 @@ html {
 }
 
 h4 {
-  color: red;
   margin: 5px;
-}
-
-.header {
-  color: red;
+  padding: 0px;
 }

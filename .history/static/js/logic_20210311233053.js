@@ -24,7 +24,7 @@ d3.json(url, d => {
         style: chooseStyle,
 
         onEachFeature: function(feature, layer) {
-            layer.bindPopup("<div class=header><b><u>EARTHQUAKE INFO:</u></b></div><b>Magnitude: </b>" + feature.properties.mag + "<br> <b>Location: </b>" + feature.properties.place);
+            layer.bindPopup("<h4>EARTHQUAKE INFO:</h4> <br> <b>Magnitude: </b>" + feature.properties.mag + "<br> <b>Location: </b>" + feature.properties.place);
         }
     }).addTo(myMap);
 
@@ -71,7 +71,7 @@ d3.json(url, d => {
         let intensity = [0,1,2,3,4,5];
         let colors = ["#FEF001", "#FFCE03", "#FD9A01", "#FD6104", "#FF2C05", "#F00505"];
 
-        let legendInfo = "<h4><u>LEGEND:</u></h4>"
+        let legendInfo = "<h4>LEGEND: </h4>"
         div.innerHTML = legendInfo 
         for (let i = 0; i < colors.length; i++) {
             div.innerHTML +=

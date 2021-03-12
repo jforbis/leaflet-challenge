@@ -10,8 +10,8 @@ let map = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?a
 });
 
 let myMap = L.map("map", {
-    center: [39.0997,-94.5786], //**KC, MO**//
-    zoom: 2.5,
+    center: [0,0], 
+    zoom: 3,
 });
 
 map.addTo(myMap);
@@ -24,7 +24,7 @@ d3.json(url, d => {
         style: chooseStyle,
 
         onEachFeature: function(feature, layer) {
-            layer.bindPopup("<div class=header><b><u>EARTHQUAKE INFO:</u></b></div><b>Magnitude: </b>" + feature.properties.mag + "<br> <b>Location: </b>" + feature.properties.place);
+            layer.bindPopup("Magnitude: " + feature.properties.mag + "<br> Location: " + feature.properties.place);
         }
     }).addTo(myMap);
 
@@ -71,7 +71,7 @@ d3.json(url, d => {
         let intensity = [0,1,2,3,4,5];
         let colors = ["#FEF001", "#FFCE03", "#FD9A01", "#FD6104", "#FF2C05", "#F00505"];
 
-        let legendInfo = "<h4><u>LEGEND:</u></h4>"
+        let legendInfo = "<h4>LEGEND: </h4>"
         div.innerHTML = legendInfo 
         for (let i = 0; i < colors.length; i++) {
             div.innerHTML +=

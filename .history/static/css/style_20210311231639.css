@@ -24,11 +24,7 @@ html {
   margin-right: 8px;
 }
 
-h4 {
-  color: red;
+h5 {
   margin: 5px;
-}
-
-.header {
-  color: red;
+  padding: 0px;
 }
